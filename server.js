@@ -32,6 +32,7 @@ app.get('/home', (req, res) => {
   });
 
 
+
   app.get('/staff', (req, res) => {
     db.collection('staff').find().toArray()
       .then(results => {
@@ -40,6 +41,21 @@ app.get('/home', (req, res) => {
       .catch(/* ... */)
   })
 
+  app.get('/products', (req, res) => {
+    db.collection('product').find().toArray()
+      .then(results => {
+        res.render('product.ejs', { product: results })
+      })
+      .catch(/* ... */)
+  })
+  
+  app.get('/departments', (req, res) => {
+    db.collection('department').find().toArray()
+      .then(results => {
+        res.render('department.ejs', { department: results })
+      })
+      .catch(/* ... */)
+  })
 
   app.get('/policy', (req, res) => {
     db.collection('policy').find().toArray()
