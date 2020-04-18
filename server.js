@@ -8,7 +8,6 @@ const MongoClient = require("mongodb").MongoClient;
 const bodyParser= require('body-parser')
 const url = "mongodb://localhost:27017/GrowingTogether";
 const err = console.error();
-const methodOverride = require('method-override')
 
 
 app.use(express.static('public'));
